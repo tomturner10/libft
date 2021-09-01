@@ -1,4 +1,6 @@
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+#include <stdlib.h>
+
+unsigned int	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	unsigned int	i;
 	unsigned int	j;
