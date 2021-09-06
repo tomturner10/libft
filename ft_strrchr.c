@@ -1,7 +1,9 @@
-char *ft_strrchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	char *o;
+	int		i;
+	char	*o;
 
 	o = NULL;
 	i = 0;
