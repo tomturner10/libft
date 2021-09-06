@@ -1,5 +1,3 @@
-#include <stdlib.h>
-
 void *ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char *src;
@@ -11,5 +9,5 @@ void *ft_memchr(const void *s, int c, size_t n)
 			return (src);
 		n--;
 	}
-	return ('\0');
+	return ((unsigned char *) '\0');
 }

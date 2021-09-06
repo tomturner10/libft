@@ -1,25 +1,27 @@
-#include <stdlib.h>
-
 void *ft_memmove(void *dest, const void *src, size_t n)
 {
-	char			*temp;
-	int				count;
 	unsigned char	*s;
 	unsigned char	*d;
+	int i;
 
-	count = n;
+	i = n;
 	s = (unsigned char *) src;
 	d = (unsigned char *) dest;
-	while (count > 0)
+	if (d < s) 
 	{
-		*temp++ = *s++;
-		count--;
+		while (n > 0)
+		{
+			*d++ = *s++;
+			n--;
+		}
 	}
-	while (n > 0)
+	else
 	{
-		*d++ = temp[count];
-		n--;
-		count++;
+		while (i > 0)
+		{
+			*d-- = *s--;
+			i--;
+		}
 	}
 	return (dest);
 }
