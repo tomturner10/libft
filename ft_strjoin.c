@@ -2,12 +2,16 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*rtn;
+	char			*rtn;
+	unsigned int	s1len;
+	unsigned int	s2len;
 
-	rtn = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) * sizeof(char)));
+	s1len = ft_strlen(s1);
+	s2len = ft_strlen(s2);
+	rtn = (char *)malloc((s1len + s2len) * sizeof(char));
 	if (rtn == NULL)
 		return (NULL);
-	ft_strlcpy(rtn, (char *)s1, ft_strlen(s1) + 1);
-	ft_strlcat(rtn, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
+	ft_strlcpy(rtn, (char *)s1, s1len + 1);
+	ft_strlcat(rtn, s2, s1len + s2len + 1);
 	return (rtn);
 }
