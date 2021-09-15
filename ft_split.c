@@ -14,7 +14,7 @@
 
 static char	**ft_free(char **rtn, int i)
 {
-	int j;
+	int	j;
 
 	j = 0;
 	while (rtn[j] != NULL && j < i)
@@ -29,7 +29,7 @@ static char	**ft_free(char **rtn, int i)
 static int	ft_countwords(char const *s, char c)
 {
 	int	count;
-	int i;
+	int	i;
 
 	count = 0;
 	i = 1;
@@ -48,7 +48,7 @@ static int	ft_countwords(char const *s, char c)
 
 static int	ft_nextword(char const *s, char c, int i)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (s[i] == c && s[i] != '\0')
@@ -63,19 +63,21 @@ static int	ft_nextword(char const *s, char c, int i)
 
 char	**ft_split(char const *s, char c)
 {
-	char **rtn;
-	int i;
-	int j;
-	int k; 
+	char	**rtn;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
 	k = 0;
-	if ( s == NULL || !(rtn = (char **)malloc((ft_countwords(s, c) + 1) * sizeof(char *))))
+	rtn = (char **)malloc((ft_countwords(s, c) + 1) * sizeof(char *));
+	if (s == NULL || rtn == NULL)
 		return (NULL);
 	while (i < ft_countwords(s, c))
 	{
 		j = 0;
-		if (!(rtn[i] = (char *)malloc(ft_nextword(s, c, k) + 1)))
+		rtn[i] = (char *)malloc(ft_nextword(s, c, k) + 1);
+		if (rtn == NULL)
 			return (ft_free(rtn, i));
 		while (s[k] != '\0' && s[k] == c)
 			k++;

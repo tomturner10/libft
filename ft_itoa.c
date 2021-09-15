@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tturner <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/15 12:27:56 by tturner           #+#    #+#             */
+/*   Updated: 2021/09/15 12:27:56 by tturner          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_countnbr(int nb)
@@ -21,10 +33,9 @@ char	*ft_itoa(int n)
 	int				len;
 	unsigned int	num;
 
-	if (n == 0)
-		return ("0");
 	len = ft_countnbr(n);
-	if (!(rtn = (char *)malloc(len * sizeof(char))))
+	rtn = (char *)malloc(len * sizeof(char));
+	if (rtn == NULL)
 		return (NULL);
 	if (n < 0)
 	{
