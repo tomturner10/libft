@@ -23,20 +23,11 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	if (n == 0)
 		return (0);
-	while (two[i] != '\0' && one[i] != '\0' && i < n)
+	while (i < n)
 	{
 		if (two[i] != one[i])
-		{
-			if (one[i] < two[i])
-				return (-1);
-			else
-				return (1);
-		}
+			return (one[i] - two[i]);
 		i++;
 	}
-	if (one[i] == '\0' && two[i] != '\0')
-		return (-1);
-	if (two[i] == '\0' && one[i] != '\0')
-		return (1);
 	return (0);
 }

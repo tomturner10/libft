@@ -34,7 +34,7 @@ char	*ft_itoa(int n)
 	unsigned int	num;
 
 	len = ft_countnbr(n);
-	rtn = (char *)malloc(len * sizeof(char));
+	rtn = (char *)malloc(len + 1 * sizeof(char));
 	if (rtn == NULL)
 		return (NULL);
 	if (n < 0)
@@ -44,6 +44,7 @@ char	*ft_itoa(int n)
 	}
 	else
 		num = n;
+	rtn[len] = '\0';
 	while (len > 0 && rtn[len - 1] != '-')
 	{
 		rtn[len - 1] = num % 10 + '0';

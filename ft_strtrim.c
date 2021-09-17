@@ -28,7 +28,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		beg++;
 	while (end > beg && ft_strchr(set, s1[end]) != NULL)
 		end--;
-	rtn = (char *)malloc(end + 1 - beg * sizeof(char));
+	rtn = (char *)malloc((end + 2 - beg) * sizeof(char));
 	if (rtn == NULL)
 		return (NULL);
 	while (i <= end - beg)
@@ -36,5 +36,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		rtn[i] = s1[beg + i];
 		i++;
 	}
+	rtn[i] = '\0';
 	return (rtn);
 }
