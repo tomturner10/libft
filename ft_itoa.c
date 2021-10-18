@@ -34,7 +34,7 @@ char	*ft_itoa(int n)
 	unsigned int	num;
 
 	len = ft_countnbr(n);
-	rtn = (char *)malloc(len + 1 * sizeof(char));
+	rtn = (char *)ft_calloc(len + 1, sizeof(char));
 	if (rtn == NULL)
 		return (NULL);
 	if (n < 0)
